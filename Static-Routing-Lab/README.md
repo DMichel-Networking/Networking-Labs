@@ -14,7 +14,7 @@ This project simulates a basic WAN environment using Cisco Packet Tracer. Two se
 ## Network Topology
 
 ```text
-PC0 ─ Switch0 ─ Router0 ===== Router1 ─ Switch1 ─ PC1
+PC0 ─ Switch0 ─ Router1 ===== Router2 ─ Switch1 ─ PC1
 ```
 
 ## IP Addressing Scheme
@@ -24,21 +24,21 @@ PC0 ─ Switch0 ─ Router0 ===== Router1 ─ Switch1 ─ PC1
 | Device | IP Address | Subnet Mask |
 |----------|----------|----------|
 | PC0 | 192.168.1.3 | 255.255.255.128 |
-| Router0 G0/0 (Default Gateway) | 192.168.1.1 | 255.255.255.128 |
+| Router1 G0/0 (Default Gateway) | 192.168.1.1 | 255.255.255.128 |
 
 ### LAN 2
 
 | Device | IP Address | Subnet Mask |
 |----------|----------|----------|
 | PC1 | 192.168.2.3 | 255.255.255.128 |
-| Router1 G0/0 (Default Gateway) | 192.168.2.1 | 255.255.255.128 |
+| Router2 G0/0 (Default Gateway) | 192.168.2.1 | 255.255.255.128 |
 
 ### WAN Serial Connection
 
 | Device | Interface | IP Address | Subnet Mask |
 |----------|----------|----------|----------|
-| Router0 | Serial0/1/0 | 192.168.3.1 | 255.255.255.128 |
-| Router1 | Serial0/1/0 | 192.168.3.2 | 255.255.255.128 |
+| Router1 | Serial0/1/0 | 192.168.3.1 | 255.255.255.128 |
+| Router2 | Serial0/1/0 | 192.168.3.2 | 255.255.255.128 |
 
 ## Technologies Used
 - Cisco Packet Tracer
@@ -62,13 +62,13 @@ PC0 ─ Switch0 ─ Router0 ===== Router1 ─ Switch1 ─ PC1
 
 ## Routing Configuration
 
-### Router0
+### Router1
 
 ```bash
 ip route 192.168.2.0 255.255.255.128 192.168.3.2
 ```
 
-### Router1
+### Router2
 
 ```bash
 ip route 192.168.1.0 255.255.255.128 192.168.3.1
